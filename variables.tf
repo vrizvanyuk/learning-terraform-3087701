@@ -24,11 +24,6 @@ variable "db_username" {
     default     = "admin"
 }
 
-variable "db_password" {
-    description = "Password for the database"
-    type        = string
-}
-
 variable "common_tags" {
     description = "Common tags for all resources"
     type        = map(string)
@@ -36,11 +31,6 @@ variable "common_tags" {
         Environment = "dev"
         ManagedBy   = "Terraform"
     }
-}
-
-variable "ami_id" {
-    description = "The AMI ID to use for the instance"
-    type        = string
 }
 
 variable "instance_count" {
@@ -58,34 +48,9 @@ variable "min_size" {
     default     = 1
 }
 
-variable "bucket_name" {
-    description = "The name of the S3 bucket"
-    type        = string
-}
-
 variable "rds_instance_class" {
     description = "The instance type of the RDS instance"
     default     = "db.t3.micro"
-}
-
-variable "eip_allocation_id" {
-    description = "The allocation ID of the Elastic IP"
-    type        = string
-}
-
-variable "security_group_ids" {
-    description = "List of Security Group IDs"
-    type        = list(string)
-}
-
-variable "iam_role_name" {
-    description = "Name of the IAM role"
-    type        = string
-}
-
-variable "route_table_id" {
-    description = "The ID of the route table"
-    type        = string
 }
 
 variable "aws_region" {
